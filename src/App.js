@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Plot from 'react-plotly.js'
+import PiePlot from './components/PiePlot'
+import BoxPlot from './components/BoxPlot'
+import TimePlot from './components/TimePlot'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        <h1>EZ Bar Plot</h1>
+        <Plot data={[{
+          x:[24,48,72],y:[1,25,50,100,150,200,250,300],
+          type: 'line',
+          mode: 'lines+markers',
+          maker: {color:'red'}
+        }]}
+        layout={{width: 600,height:600,title: 'EZ Bar Graph'}}
+        />
+
+        <h1>Pie Plot</h1>
+        <PiePlot />
+
+        <h1>Box Plot</h1>
+        <BoxPlot />
+
+        <h1>Time Plot</h1>
+        <TimePlot />
+      </div>
+    )
+  }
 }
-
-export default App;
