@@ -3,6 +3,8 @@ import Plot from 'react-plotly.js'
 import PiePlot from './components/PiePlot'
 import BoxPlot from './components/BoxPlot'
 import TimePlot from './components/TimePlot'
+import HeatPlot from './components/HeatPlot'
+import SubPlot from './components/SubPlot'
 
 
 export default class App extends Component {
@@ -27,6 +29,12 @@ export default class App extends Component {
 
         <h1>Time Plot</h1>
         <TimePlot />
+
+        <h1>Heat Plot</h1>
+        <HeatPlot />
+
+        <h1>Sub Plot</h1>
+        <SubPlot />
       </div>
     )
   }
